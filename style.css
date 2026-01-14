@@ -1,38 +1,38 @@
+/* 強制標記為深色網頁 */
 :root {
     color-scheme: dark;
-    /* 強制標記為深色網頁 */
 }
 
-/* ======================================================
-   1. 全域樣式設定
-   ====================================================== */
+/* 全域樣式設定 */
 body {
     background-color: #050505 !important;
     color: #e0e0e0;
 }
 
-/* ======================================================
-   2. 開頭主視覺區 (Hero Section)
-   ====================================================== */
+
+
+/* 開頭主視覺區 */
 .hero-section {
+    /* 設定135 度斜向漸層 */
     background: linear-gradient(135deg, 
     #282847 0%, 
     #20305b 40%, 
     #4e342e 70%, 
     #b8860b 100%);
-    background-size: 200% 200% !important;
-    animation: gradientBG 5s ease-in-out infinite; /* 微調為 8s 讓漸層流動更優雅 */
+    /* 把漸層背景放大到原本的2.5倍 */
+    background-size: 250% 250%;
+    /* 啟動動態效果， */
+    animation: gradientBG 5s ease-in-out infinite;
 
     min-height: 200px;
     display: flex;
+    /* 標題和內容垂直排列 */
     flex-direction: column;
+    /* 內容在水平與垂直方向都居中 */
     justify-content: center;
     align-items: center;
-    position: relative;
-    overflow: hidden;
-
-    box-shadow: inset 0 0 150px rgba(0, 0, 0, 0.8);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+    /* 區塊的四個角落產生黑色內陰影 */
+    box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
 }
 
 @keyframes gradientBG {
@@ -42,65 +42,115 @@ body {
 }
 
 /* 質感金屬文字 (h1) */
-.text-gold {
+.hero-text-gold {
     font-family: "LXGW WenKai TC", cursive !important;
-    /* 修正：合併重複的 letter-spacing，統一使用 4px */
-    letter-spacing: 4px; 
+    /* 字之間的距離 */
+    letter-spacing: 8px; 
+    font-size: 40px;
     background: linear-gradient(to bottom,
             #cfb53b 0%,
             #fff5c3 20%,
             #c5a059 40%,
             #ffecad 70%,
             #8a6d3b 100%);
+    /* 把背景色剪裁成文字的形狀 */
     -webkit-background-clip: text;
+    /* 文字原本的顏色設為透明 */
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-
-    font-size: 2.5rem;
-    font-weight: 800;
-    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.6));
-    margin-bottom: 10px;
 }
 
-/* ======================================================
-   3. 導覽列設計 (Navbar) 
-   ====================================================== */
+
+
+/*導覽列設計*/
 .custom-navbar {
-    font-family: "LXGW WenKai TC", cursive !important;
-    background-color: rgba(10, 10, 10, 0.95) !important;
-    /* 稍微提高不透明度增加穩重感 */
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(197, 160, 89, 0.3) !important;
-    padding: 15px 0;
+    height: 70px;
+    font-family: "LXGW WenKai TC", cursive;
+    background-color: #050505;
+    border-top: 1px solid #c5a059;
+    border-bottom: 1px solid #c5a059;
+    padding: 8px;
 }
 
-/* 導覽連結 */
+/* 導覽列連結 */
 .custom-navbar .nav-link {
+    color: #c5a059;
     font-weight: 500;
-    letter-spacing: 1.5px;
-    color: #c5a059 !important;
-    /* 基本色：古銅金 */
-    padding: 8px 20px !important;
-    transition: color 0.3s ease;
 }
 
-/* 手機版按鈕同步顏色 */
+/* 手機版按鈕外框顏色 */
 .navbar-toggler {
     border-color: #c5a059 !important;
 }
 
+/* 把手機版按鈕用SVG 向量圖客製化成金色 */
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23c5a059' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
 }
 
-/* ======================================================
-   4. 內容區塊微調
-   ====================================================== */
+.navbar-collapse {
+    background-color: rgba(10, 10, 10, 0.95);
+}
 
-/* 設定螢幕上留的px */
+/* 導覽列設定螢幕上留的px */
 :target {
     scroll-margin-top: 80px;
+}
+
+
+
+
+/* 卡片 */
+.custom-card {
+    /* 內距 */
+    padding: 24px;
+    font-family: "LXGW WenKai TC", cursive;
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(197, 160, 89);
+    /* 邊框圓角 */
+    border-radius: 20px;
+    /* 下方外距 */
+    margin-bottom: 10px;
+    /* 文字左右對齊 */
+    text-align: justify;
+    /* 針對中文字優化，避免標點符號造成奇怪的間隙 */
+    text-justify: inter-character;
+}
+
+/* 卡片標題 */
+.custom-card .card-title {
+    color: #c5a059 !important;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(197, 160, 89, 0.5) ;
+    /* 下方內距 */
+    padding-bottom: 8px;
+    /* 下方外距 */
+    margin-bottom: 24px;
+}
+
+/* 卡片中標籤 strong 文字顏色 */
+.custom-card strong {
+    color: #c5a059;
+}
+
+
+
+/* 工作經歷表格標題列顏色 */
+.custom-table thead th {
+    color: #c5a059;
+    border-bottom: 2px solid rgba(197, 160, 89, 0.5);
+    font-weight: 700;
+}
+
+
+
+
+/* 專業證照清單設定 */
+.list-group-item {
+    background-color: #252525;
+    color: #ffffff;
+    border: 1px solid rgba(197, 160, 89, 0.5);
 }
 
 /* 設定圖片旋轉木馬高度 */
@@ -126,61 +176,18 @@ body {
     padding-bottom: 5rem;
 }
 
-/* 所有的自定義卡片容器 */
-.custom-card {
-    font-family: "LXGW WenKai TC", cursive !important;
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    /* 深灰色背景 */
-    border: 1px solid rgba(197, 160, 89, 0.3) !important;
-    /* 淡淡的金邊 */
-    border-radius: 15px;
-    color: #e0e0e0 !important;
-    margin-bottom: 20px;
-}
-
-/* 覆蓋卡片標題 */
-.custom-card .card-title {
-    color: #c5a059 !important;
-    /* 金色文字 */
-    border-bottom: 2px solid rgba(197, 160, 89, 0.5) !important;
-}
-
-/* 針對學歷區塊、證照區塊內部原本是白色的地方進行覆蓋 */
-/* 修正：合併了重複的 list-group-item 設定 */
-.custom-card .bg-light,
-.custom-card .card,
-.list-group-item {
-    background-color: #252525 !important;
-    /* 比卡片稍微亮一點的深灰 */
-    color: #ffffff !important;
-    border: 1px solid rgba(197, 160, 89, 0.2) !important;
-}
-
-/* 標籤 strong 文字顏色 */
-.custom-card strong {
+/* 作品集內的標題與小標題顏色 */
+.portfolio-item h3, 
+.portfolio-item h4 {
     color: #c5a059;
 }
 
-/* 修正作品集內的卡片與文字 */
-.portfolio-item {
-    background-color: transparent !important;
-}
-
-.portfolio-item h3, 
-.portfolio-item h4 {
-    color: #c5a059 !important;
-}
-
+/* 作品集內的標題底線 */
 .portfolio-item h4 {
     border-bottom: 1px solid rgba(197, 160, 89, 0.5) !important;
 }
 
-.card-body {
-    /* 讓文字左右對齊 */
-    text-align: justify;
-    /* 針對中文字優化，避免標點符號造成奇怪的間隙 */
-    text-justify: inter-character;
-}
+
 
 /* 頁尾樣式 */
 .footer-section {
@@ -189,22 +196,7 @@ body {
     color: #888;
 }
 
-.footer-section .text-gold {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-}
-
-.footer-section a {
-    color: #c5a059;
-    transition: 0.3s;
-}
-
-.footer-section a:hover {
-    color: #fff5c3;
-    text-shadow: 0 0 10px rgba(197, 160, 89, 0.5);
-}
-
-/* 回到頂部按鈕自定義 */
+/* 回到頂部按鈕*/
 .btn-back-to-top {
     color: #c5a059;
     border-color: #c5a059;
@@ -220,17 +212,4 @@ body {
     transform: translateY(-5px);
 }
 
-/* 工作經驗表格自定義 */
-.custom-work-table {
-    background-color: transparent !important;
-    margin-bottom: 0;
-    color: #e0e0e0 !important;
-}
 
-/* 表格標題顏色 */
-.custom-work-table thead th {
-    color: #c5a059 !important;
-    border-bottom: 2px solid rgba(197, 160, 89, 0.5) !important;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
