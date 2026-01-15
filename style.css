@@ -54,7 +54,7 @@ body {
     background-clip: text;
     color: transparent;
     /* 文字外距隨螢幕大小左右自動調整5% */
-    margin: 0 5vh;
+    margin: 0 10vh;
 }
 
 
