@@ -39,8 +39,8 @@ body {
 .hero-text-gold {
     font-family: "LXGW WenKai TC", cursive !important;
     /* 字之間的距離 */
-    letter-spacing: 5px; 
-    font-size: 36px;
+    letter-spacing: 8px; 
+    font-size: 38px;
     background: linear-gradient(to bottom,
             #cfb53b 0%,
             #fff5c3 20%,
@@ -54,7 +54,7 @@ body {
     background-clip: text;
     color: transparent;
     /* 文字外距隨螢幕大小左右自動調整5% */
-    margin: 0 10vh;
+    margin: 0 5vh;
 }
 
 
