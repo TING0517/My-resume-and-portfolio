@@ -26,7 +26,7 @@ body {
     /* 區塊的四個角落產生黑色內陰影 */
     box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.8);
     /* 間距隨螢幕大小上下自動調整12% ，左右0%*/
-    padding: 12vh 0;
+    padding: 18vh 0;
 }
 
 @keyframes gradientBG {
