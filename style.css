@@ -14,11 +14,11 @@ body {
 /* 開頭主視覺區 */
 .hero-section {
     /* 設定135 度斜向漸層 */
-    background: linear-gradient(135deg, 
-    #282847 0%, 
-    #20305b 40%, 
-    #4e342e 70%, 
-    #b8860b 100%);
+    background: linear-gradient(135deg,
+            #282847 0%,
+            #20305b 40%,
+            #4e342e 70%,
+            #b8860b 100%);
     /* 把漸層背景放大到原本的2.5倍 */
     background-size: 250% 250%;
     /* 啟動動態效果， */
@@ -30,16 +30,24 @@ body {
 }
 
 @keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* 質感金屬文字 (h1) */
 .hero-text-gold {
     font-family: "LXGW WenKai TC", cursive !important;
     /* 字之間的距離 */
-    letter-spacing: 6px; 
+    letter-spacing: 6px;
     font-size: 38px;
     background: linear-gradient(to bottom,
             #cfb53b 0%,
@@ -94,6 +102,36 @@ body {
     scroll-margin-top: 80px;
 }
 
+/* 下拉選單樣式優化 */
+.custom-navbar .dropdown-menu {
+    border: 1px solid #c5a059;
+    border-radius: 10px;
+    margin-top: 0;
+    /* 消除間隙 */
+}
+
+.custom-navbar .dropdown-item {
+    color: #c5a059;
+    padding: 10px 20px;
+    transition: all 0.2s ease;
+}
+
+.custom-navbar .dropdown-item:hover {
+    background-color: #c5a059;
+    color: #050505;
+}
+
+.custom-navbar .dropdown-divider {
+    border-top: 1px solid rgba(197, 160, 89, 0.3);
+}
+
+/* 桌面端滑鼠移入即顯示下拉選單 (選用) */
+@media (min-width: 576px) {
+    .custom-navbar .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
+
 
 
 
@@ -118,7 +156,7 @@ body {
 .custom-card .card-title {
     color: #c5a059 !important;
     font-weight: 700;
-    border-bottom: 2px solid rgba(197, 160, 89, 0.5) ;
+    border-bottom: 2px solid rgba(197, 160, 89, 0.5);
     /* 下方內距 */
     padding-bottom: 8px;
     /* 下方外距 */
@@ -173,7 +211,7 @@ body {
 }
 
 /* 作品集內的標題與小標題顏色 */
-.portfolio-item h3, 
+.portfolio-item h3,
 .portfolio-item h4 {
     color: #c5a059;
 }
@@ -209,3 +247,37 @@ body {
 }
 
 
+/* 作品集卡片樣式優化 */
+.btn-glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 1);
+    color: white !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-glass:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid rgba(255, 255, 255, 1);
+    transform: translateY(-2px);
+    color: white !important;
+}
+
+.portfolio-card img {
+    height: 300px !important;
+    object-fit: contain;
+    background-color: #585858;
+    padding: 10px;
+}
+
+.portfolio-card {
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(197, 160, 89, 0.3) !important;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+    border-color: #c5a059 !important;
+}

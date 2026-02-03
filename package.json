@@ -1,0 +1,22 @@
+{
+  "name": "my-resume-and-portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TING0517/My-resume-and-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/TING0517/My-resume-and-portfolio/issues"
+  },
+  "homepage": "https://github.com/TING0517/My-resume-and-portfolio#readme"
+}

@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    
+
     <!-- 開頭主視覺區 -->
     <div id="home" class="container-fluid hero-section text-center">
         <div>
@@ -52,8 +52,20 @@
                     <li class="nav-item flex-fill text-center">
                         <a class="nav-link" href="#Certificates">專業證照</a>
                     </li>
-                    <li class="nav-item flex-fill text-center">
-                        <a class="nav-link" href="#app">作品集</a>
+                    <li class="nav-item flex-fill text-center dropdown">
+                        <a class="nav-link dropdown-toggle" href="#portfolio" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            作品集
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark bg-dark border-secondary">
+                            <li><a class="dropdown-item" href="project-7.html">點餐及後台管理平台</a></li>
+                            <li><a class="dropdown-item" href="project-1.html">日本旅遊分析</a></li>
+                            <li><a class="dropdown-item" href="project-2.html">海洋生物辨識App</a></li>
+                            <li><a class="dropdown-item" href="project-3.html">撲克牌牌面辨識</a></li>
+                            <li><a class="dropdown-item" href="project-4.html">海洋生物辨識(二版)</a></li>
+                            <li><a class="dropdown-item" href="project-5.html">新聞輿情分析</a></li>
+                            <li><a class="dropdown-item" href="project-6.html">AI使用者中斷行為研究</a></li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -66,8 +78,7 @@
             <div class="row align-items-center">
 
                 <div class="col-md-4 text-center">
-                    <img src="images/個人照/個人照.png"
-                        class="rounded-circle shadow"
+                    <img src="images/個人照/個人照.png" class="rounded-circle shadow"
                         style="width: 230px; height: 230px; border: 4px solid #c5a059; padding: 4px; background: #0a0a0a;">
                 </div>
 
@@ -215,6 +226,7 @@
                         <span class="badge rounded-pill bg-primary p-2 px-3">C Language</span>
                         <span class="badge rounded-pill bg-info text-dark p-2 px-3">MySQL</span>
                         <span class="badge rounded-pill bg-info text-dark p-2 px-3">SQLite</span>
+                        <span class="badge rounded-pill bg-info text-dark p-2 px-3">Firebase</span>
                     </div>
                 </div>
 
@@ -263,7 +275,8 @@
                             </div>
                             <div class="list-group-item">
                                 <div class="row align-items-center">
-                                    <div class="col-5"><img src="images/證照/會計事務-資訊.jpg" class="img-fluid rounded" alt="會計資訊丙級">
+                                    <div class="col-5"><img src="images/證照/會計事務-資訊.jpg" class="img-fluid rounded"
+                                            alt="會計資訊丙級">
                                     </div>
                                     <div class="col-7">勞動部會計資訊丙級</div>
                                 </div>
@@ -285,8 +298,8 @@
                         <div class="collapse show" id="tqcCerts">
                             <div class="list-group-item">
                                 <div class="row align-items-center">
-                                    <div class="col-5"><img src="images/證照/物件導向程式設計 Java 8.jpg" class="img-fluid rounded"
-                                            alt="JAVA"></div>
+                                    <div class="col-5"><img src="images/證照/物件導向程式設計 Java 8.jpg"
+                                            class="img-fluid rounded" alt="JAVA"></div>
                                     <div class="col-7">TQC-PD - JAVA</div>
                                 </div>
                             </div>
@@ -327,7 +340,8 @@
                             </div>
                             <div class="list-group-item">
                                 <div class="row align-items-center">
-                                    <div class="col-5"><img src="images/證照/TQC-中文輸入.jpg" class="img-fluid rounded" alt="中文輸入">
+                                    <div class="col-5"><img src="images/證照/TQC-中文輸入.jpg" class="img-fluid rounded"
+                                            alt="中文輸入">
                                     </div>
                                     <div class="col-7">TQC-OA - 中文輸入</div>
                                 </div>
@@ -345,256 +359,102 @@
     </div>
 
     <!-- 作品集 -->
-    <div id="app">
+    <div id="portfolio">
         <div class="container-fluid mt-3">
             <div class="custom-card">
                 <h2 class="card-title">作品集</h2>
 
-                <div v-for="proj in projects" :key="proj.id" class="portfolio-item mb-5">
-                    <div class="card-body p-0">
-                        <h3 class="fw-bold card-title mb-3 text-center" style="border-bottom: none;">
-                            {{ proj.title }}
-                        </h3>
-
-                        <div :id="proj.id" class="carousel slide mb-4 portfolio-carousel" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button v-for="(_, index) in proj.images" :key="index" type="button"
-                                    :data-bs-target="'#' + proj.id" :data-bs-slide-to="index"
-                                    :class="{ active: index === 0 }"></button>
+                <div class="row">
+                    <!-- 作品 7 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 bg-dark text-white border-secondary portfolio-card">
+                            <img src="images/作品集/咖啡廳平台01.png" class="card-img-top" alt="咖啡廳平台">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">咖啡廳顧客點餐及商家後台管理平台</h5>
+                                <p class="card-text flex-grow-1">
+                                    使用前端技術結合Firebase與Groq AI開發出一款咖啡廳顧客點餐與商家後台管理平台...</p>
+                                <a href="project-7.html" class="btn btn-glass mt-3">查看詳情</a>
                             </div>
-                            <div class="carousel-inner rounded shadow-sm">
-                                <div v-for="(img, index) in proj.images" :key="index"
-                                    :class="['carousel-item', { active: index === 0 }]">
-                                    <img :src="img" class="d-block w-100" style="cursor: zoom-in;"
-                                        data-bs-toggle="modal" data-bs-target="#imageModal" @click="showImage(img)">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" :data-bs-target="'#' + proj.id"
-                                data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon"></span>
-                            </button>
-                            <button class="carousel-control-next" type="button" :data-bs-target="'#' + proj.id"
-                                data-bs-slide="next">
-                                <span class="carousel-control-next-icon"></span>
-                            </button>
-                        </div>
-
-                        <div class="mb-4 d-flex flex-wrap gap-2 justify-content-center">
-                            <span v-for="tag in proj.tags" :key="tag.name"
-                                :class="['badge rounded-pill p-2 px-3', tag.color]">
-                                {{ tag.name }}
-                            </span>
-                        </div>
-
-                        <div class="mb-5">
-                            <h4 class="fw-bold border-bottom pb-2 mb-3">專案概述</h4>
-                            <p v-html="proj.overview"></p>
-                        </div>
-
-                        <div class="row mb-5"
-                            v-if="(proj.techArchitecture && proj.techArchitecture.length > 0) || (proj.caseStudies && proj.caseStudies.length > 0)">
-                            <div :class="[proj.caseStudies && proj.caseStudies.length > 0 ? 'col-md-6' : 'col-12']">
-                                <h4 class="fw-bold border-bottom pb-2 mb-3">{{ proj.techTitle }}</h4>
-                                <div v-for="item in proj.techArchitecture" :key="item.title" class="mb-3">
-                                    <span :class="['badge fs-6 border mb-1', item.color]">{{ item.title
-                                        }}</span>
-                                    <p>{{ item.content }}</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6" v-if="proj.caseStudies && proj.caseStudies.length > 0">
-                                <h4 class="fw-bold border-bottom pb-2 mb-3">{{ proj.caseTitle }}</h4>
-                                <div v-for="item in proj.caseStudies" :key="item.title" class="mb-3">
-                                    <span :class="['badge fs-6 border mb-1', item.color]">{{ item.title
-                                        }}</span>
-                                    <p v-html="item.content"></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center mt-4">
-                            <a v-if="proj.link" :href="proj.link" target="_blank"
-                                :class="['btn btn-lg px-5 shadow-sm', proj.linkClass]">
-                                {{ proj.linkText }}
-                            </a>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content bg-transparent border-0">
-                    <div class="modal-body p-0 text-center">
-                        <img :src="currentModalImg" class="img-fluid rounded">
-                        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                            data-bs-dismiss="modal"></button>
+                    <!-- 作品 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 bg-dark text-white border-secondary portfolio-card">
+                            <img src="images/作品集/大數據輿情分析期末專案報告01.png" class="card-img-top" alt="日本旅遊分析">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">日本旅遊分析</h5>
+                                <p class="card-text flex-grow-1">使用 Python 自動爬取 PTT 數據，結合 BERT 模型進行深度情緒分類...</p>
+                                <a href="project-1.html" class="btn btn-glass mt-3">查看詳情</a>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- 作品 2 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 bg-dark text-white border-secondary portfolio-card">
+                            <img src="images/作品集/海洋生物辨識App.png" class="card-img-top" alt="海洋生物辨識App">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">海洋生物辨識App</h5>
+                                <p class="card-text flex-grow-1">結合教育與娛樂的互動工具，採用 YOLOv5 演算法開發高精度辨識模型...</p>
+                                <a href="project-2.html" class="btn btn-glass mt-3">查看詳情</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 作品 3 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 bg-dark text-white border-secondary portfolio-card">
+                            <img src="images/作品集/深度學習課程專案報告-辨識撲克牌牌面.png" class="card-img-top" alt="辨識撲克牌牌面">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">辨識撲克牌牌面</h5>
+                                <p class="card-text flex-grow-1">使用 TensorFlow 訓練辨識 53 種類別的撲克牌牌面，準確率約 0.85...</p>
+                                <a href="project-3.html" class="btn btn-glass mt-3">查看詳情</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 作品 4 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 bg-dark text-white border-secondary portfolio-card">
+                            <img src="images/作品集/深度學習課程專案報告-海洋生物辨識1.jpg" class="card-img-top" alt="海洋生物辨識">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">海洋生物辨識</h5>
+                                <p class="card-text flex-grow-1">使用 YOLOv8 再次訓練大學專題素材，優化辨識效能...</p>
+                                <a href="project-4.html" class="btn btn-glass mt-3">查看詳情</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 作品 5 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 bg-dark text-white border-secondary portfolio-card">
+                            <img src="images/作品集/大數據輿情分析-期中專案報告.png" class="card-img-top" alt="ETtoday新聞雲輿情分析">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">ETtoday新聞雲輿情分析</h5>
+                                <p class="card-text flex-grow-1">爬取 ETtoday 新聞雲數據，分析熱門關鍵字、熱門人物及關聯性...</p>
+                                <a href="project-5.html" class="btn btn-glass mt-3">查看詳情</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 作品 6 -->
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 bg-dark text-white border-secondary portfolio-card">
+                            <img src="images/作品集/論文.png" class="card-img-top" alt="碩士論文">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">生成式AI使用者中斷行為研究</h5>
+                                <p class="card-text flex-grow-1">探討生成式 AI 工具使用者的間歇性中斷行為誘因與影響...</p>
+                                <a href="project-6.html" class="btn btn-glass mt-3">查看詳情</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
+
             </div>
         </div>
     </div>
-
-    <script>
-        const { createApp } = Vue;
-        createApp({
-            data() {
-                return {
-                    currentModalImg: '',
-                    projects: [{
-                        id: 'app1',
-                        title: '碩士大數據輿情分析-日本旅遊分析',
-                        techTitle: '技術架構',
-                        caseTitle: '案例分析',
-                        images: [
-                            'images/作品集/大數據輿情分析期末專案報告01.png',
-                            'images/作品集/大數據輿情分析期末專案報告02.png',
-                            'images/作品集/大數據輿情分析期末專案報告03.png',
-                            'images/作品集/大數據輿情分析期末專案報告04.png',
-                            'images/作品集/大數據輿情分析期末專案報告05.png'
-                        ],
-                        tags: [
-                            { name: 'HTML', color: 'bg-success' },
-                            { name: 'JavaScript', color: 'bg-info text-dark' },
-                            { name: 'Python', color: 'bg-primary' },
-                            { name: 'BeautifulSoup', color: 'bg-warning text-dark' },
-                            { name: 'CKIP Transformers', color: 'bg-secondary' },
-                            { name: 'Pandas', color: 'bg-danger' },
-                            { name: 'Django', color: 'bg-success' },
-                            { name: 'BERT', color: 'bg-dark' }
-                        ],
-                        overview: `使用 <strong>Python (BeautifulSoup)</strong> 自動爬取 PTT 日本旅遊版數據，結合 <strong>中研院中文斷詞 (CKIP Transformers)</strong> 進行斷詞，並運用 <strong>BERT 預訓練模型</strong> 預訓練模型進行深度情緒分類，判別社群輿論之正負面評價。透過 <strong>Pandas</strong> 進行數據清洗、統計處理及關鍵詞關聯性計算。最後以 <strong>HTML/JS</strong>，製作響應式數據儀表板，提供直觀的互動式圖表分析。`,
-                        techArchitecture: [
-                            { title: '關鍵詞熱門度分析', color: 'text-primary border-primary', content: '追蹤特定旅遊關鍵詞隨時間變化的討論熱度。' },
-                            { title: '全文檢索與關聯詞分析', color: 'text-success border-success', content: '透過文字雲與關聯計算，找出與核心議題同時出現的高頻詞彙。' },
-                            { title: '關鍵詞情緒分析', color: 'text-danger border-danger', content: '量化社群對特定景點或美食的偏好程度（正面/負面/中立）。' },
-                            { title: '區域與美食聲量監測', color: 'text-warning border-warning', content: '對比日本各大熱門旅遊城市（東京、京都、大阪）及知名美食的討論聲量佔比。' }
-                        ],
-                        caseStudies: [
-                            { title: '旅遊趨勢觀測', color: 'text-primary border-primary', content: '以「京都 櫻花」為例，分析 22 週的歷史數據。透過聲量數據趨勢圖，觀測到賞櫻高峰期出現在4月7日，可作為旅遊行程規劃的重要參考。' },
-                            { title: '語意關聯分析', color: 'text-success border-success', content: '針對「東京 淺草」進行關聯分析，結果顯示<strong>「房間、空間、車站、方便」</strong>為高頻熱門詞彙。技術數據證明淺草區因交通位置便捷、鄰近車站，是台灣遊客首選的住宿區域。' },
-                            { title: '消費者情緒回饋', color: 'text-danger border-danger', content: '以「大阪 拉麵」為例，系統過濾出 39 篇相關評論，經 BERT 模型 分析發現其中 29 篇為正面評價。這顯示大阪拉麵店在台灣社群中擁有高度滿意度。' }
-                        ],
-                        link: 'https://github.com/TING0517/Japanese-tourism-data-analysis',
-                        linkText: '查看 GitHub 程式碼',
-                        linkClass: 'btn-primary',
-                    },
-                    {
-                        id: 'app2',
-                        title: '大學專題-海洋生物辨識App',
-                        techTitle: '技術架構',
-                        caseTitle: '123',
-                        images: [
-                            'images/作品集/海洋生物辨識App.png'
-                        ],
-                        tags: [
-                            { name: 'YOLOv5', color: 'bg-success' },
-                            { name: 'Android Studio', color: 'bg-info text-dark' },
-                            { name: 'Python', color: 'bg-primary' },
-                            { name: 'PyTorch', color: 'bg-warning text-dark' },
-                            { name: 'SQLite', color: 'bg-secondary' },
-                            { name: 'Google Colab', color: 'bg-danger' }
-                        ],
-                        overview: `本專題旨在開發一款結合教育與娛樂的互動工具。團隊親赴國立海洋生物博物館採集實景影像建立自有資料集，並採用 <strong>YOLOv5</strong> 演算法開發高精度辨識模型。我主要負責<strong>App 開發</strong> 與<strong>AI 模型訓練</strong> ，成功將模型轉換為<strong>TensorFlow Lite</strong> 格式以實現行動端即時辨識。App 整合了生物辨識、知識科普、趣味集章與館內導覽，提供沉浸式的參觀體驗。`,
-                        techArchitecture: [
-                            { title: 'YOLOv5', color: 'text-primary border-primary', content: '使用YOLOv5s作為自行訓練之模型。' },
-                            { title: 'Google Colab', color: 'text-success border-success', content: '使用Google Colab進行YOLOv5模型訓練。' },
-                            { title: 'TensorFlow Lite', color: 'text-danger border-danger', content: '將YOLOv5模型訓練成果從PyTorch框架轉換為TensorFlow Lite框架後放入App使用。' },
-                            { title: 'Android Studio', color: 'text-warning border-warning', content: '使用Android Studio進行App開發。' },
-                            { title: 'SQLite', color: 'text-primary border-primary', content: '使用SQLite建置海洋生物資料庫。' },
-                            { title: 'Google Maps', color: 'text-success border-success', content: '使用Google Maps建置海生館園區導覽地圖。' },
-                        ],
-                        link: 'https://www.youtube.com/watch?v=DpSu7U9C0_U',
-                        linkText: '觀看展示影片 (YouTube)',
-                        linkClass: 'btn-danger'
-                    },
-                    {
-                        id: 'app3',
-                        title: '碩士深度學習課程專案報告-辨識撲克牌牌面',
-                        images: [
-                            'images/作品集/深度學習課程專案報告-辨識撲克牌牌面.png'
-                        ],
-                        tags: [
-                            { name: 'TensorFlow', color: 'bg-success' },
-                            { name: 'Python', color: 'bg-primary' }
-                        ],
-                        overview: `使用網路資料集Cards Image Dataset-Classification訓練模型，內含53種類別(52種數字卡牌+鬼牌)，訓練圖片7624張，驗證圖片265張，測試圖片265張。進行10回合訓練，準確率約0.85。`,
-                        link: 'https://www.kaggle.com/datasets/gpiosenka/cards-image-datasetclassification',
-                        linkText: '資料集連結',
-                        linkClass: 'btn-warning'
-                    },
-                    {
-                        id: 'app4',
-                        title: '碩士深度學習課程專案報告-海洋生物辨識',
-                        images: [
-                            'images/作品集/深度學習課程專案報告-海洋生物辨識1.jpg',
-                            'images/作品集/深度學習課程專案報告-海洋生物辨識2.png'
-                        ],
-                        tags: [
-                            { name: 'YOLOv8', color: 'bg-success' },
-                            { name: 'Python', color: 'bg-primary' },
-                            { name: 'Google Colab', color: 'bg-danger' }
-                        ],
-                        overview: `將大學專題的海洋生物素材使用YOLOv8再次進行訓練，使用VS Code進行程式撰寫與執行。`
-                    },
-                    {
-                        id: 'app5',
-                        title: '碩士大數據輿情分析-ETtoday新聞雲輿情分析',
-                        caseTitle: '案例分析',
-                        images: [
-                            'images/作品集/大數據輿情分析-期中專案報告.png'
-                        ],
-                        tags: [
-                            { name: 'HTML', color: 'bg-success' },
-                            { name: 'JavaScript', color: 'bg-info text-dark' },
-                            { name: 'Python', color: 'bg-primary' },
-                            { name: 'BeautifulSoup', color: 'bg-warning text-dark' },
-                            { name: 'CKIP Transformers', color: 'bg-secondary' },
-                            { name: 'Pandas', color: 'bg-danger' },
-                            { name: 'Django', color: 'bg-success' }
-                        ],
-                        overview: `從ETtoday 新聞雲爬取新聞，每個類別每天爬取約 15 篇新聞報導，共計 8 天，總共獲得了 358 篇新聞報導，並進行熱門關鍵字、熱門人物、熱門關鍵詞分析。
-                        <br>範例為2024年3月27日至2024年4月2日的新聞關鍵字分析結果，可以選擇不同的新聞類別或選擇“全部”以查看所有熱門關鍵字。可以選擇要匯出的關鍵字數量。輸出結果將另外以長條圖呈現。</br>`
-                    },
-                    {
-                        id: 'app6',
-                        title: '碩士論文-結合促進－抑制觀點與C-A-C模式探討生成式AI工具使用者之間歇性中斷行為',
-                        caseTitle: '研究關鍵字',
-                        images: [
-                            'images/作品集/論文.png'
-                        ],
-                        tags: [
-                            { name: '生成式AI', color: 'bg-success' },
-                            { name: '間歇性中斷', color: 'bg-info text-dark' },
-                            { name: '認知失調', color: 'bg-primary' },
-                            { name: '情感承諾', color: 'bg-warning text-dark' },
-                            { name: '促進－抑制觀點', color: 'bg-secondary' }
-                        ],
-                        overview: `
-                            <ul class="list-unstyled">
-                                <li><strong>研究對象：</strong> 生成式 AI 用戶（ChatGPT、Midjourney 等）的動態使用模式。</li>
-                                <li><strong>理論模型：</strong> 結合促進－抑制觀點與 C-A-C 模式，探討中斷行為的誘因。</li>
-                                <li><strong>核心結論：</strong>
-                                    <ul>
-                                        <li>負向影響：隱私問題與期望違背會透過「認知失調」顯著提升中斷率。</li>
-                                        <li>正向影響：感知有用性與擬人化設計可強化「情感承諾」，降低流失。</li>
-                                        <li>調節因素：AI 焦慮會削弱用戶的忠誠度，影響工具使用的持續性。</li>
-                                    </ul>
-                                </li>
-                            </ul>`,
-                        link: 'https://hdl.handle.net/11296/5xxusy',
-                        linkText: '線上論文連結',
-                        linkClass: 'btn-info text-dark'
-                    }]
-                }
-            },
-            methods: {
-                showImage(src) {
-                    this.currentModalImg = src;
-                }
-            }
-        }).mount('#app');
-    </script>
 
     <!-- 頁尾 -->
     <footer class="footer-section py-4">
