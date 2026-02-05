@@ -281,3 +281,50 @@ body {
     transform: translateY(-5px);
     border-color: #c5a059 !important;
 }
+
+/* 個人簡介區塊 (Intro) */
+.intro-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(197, 160, 89, 0.3);
+    border-radius: 15px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-box:hover {
+    transform: translateY(-10px);
+    border-color: #c5a059;
+    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.intro-phase-title {
+    color: #c5a059;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.intro-list {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.intro-list li {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: #d0d0d0;
+}
+
+.intro-list i {
+    color: #c5a059;
+}
+
+@media (max-width: 991px) {
+    .intro-box {
+        margin-bottom: 20px;
+    }
+}
